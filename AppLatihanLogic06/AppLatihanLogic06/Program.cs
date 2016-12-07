@@ -16,7 +16,7 @@ namespace AppLatihanLogic06
             {
                 try
                 {
-                    Console.Write("Masukkan Nomor Soal 05 : ");
+                    Console.Write("Masukkan Nomor Soal 06 : ");
                     int ns = int.Parse(Console.ReadLine());
                     Console.Write("Masukkan Nilai : ");
                     n = int.Parse(Console.ReadLine());
@@ -31,27 +31,27 @@ namespace AppLatihanLogic06
                         case 3:
                             Soal03 soal03 = new Soal03(n);
                             break;
-                        //case 4:
-                        //    Soal04 soal04 = new Soal04(n);
-                        //    break;
-                        //case 5:
-                        //    Soal05 soal05 = new Soal05(n);
-                        //    break;
-                        //case 6:
-                        //    Soal06 soal06 = new Soal06(n);
-                        //    break;
-                        //case 7:
-                        //    Soal07 soal07 = new Soal07(n);
-                        //    break;
-                        //case 8:
-                        //    Soal08 soal08 = new Soal08(n);
-                        //    break;
-                        //case 9:
-                        //    Soal09 soal09 = new Soal09(n);
-                        //    break;
-                        //case 10:
-                        //    Soal10 soal10 = new Soal10(n);
-                        //    break;
+                        case 4:
+                            Soal04 soal04 = new Soal04(n);
+                            break;
+                        case 5:
+                            Soal05 soal05 = new Soal05(n);
+                            break;
+                        case 6:
+                            Soal06 soal06 = new Soal06(n);
+                            break;
+                        case 7:
+                            Soal07 soal07 = new Soal07(n);
+                            break;
+                        case 8:
+                            Soal08 soal08 = new Soal08(n);
+                            break;
+                        case 9:
+                            Soal09 soal09 = new Soal09(n);
+                            break;
+                        case 10:
+                            Soal10 soal10 = new Soal10(n);
+                            break;
                         default:
                             break;
                     }

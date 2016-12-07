@@ -29,13 +29,42 @@ namespace AppLatihanLogic06
             return result;
         }
 
+        public static int progPlus(int n, int plus) {
+            int result = 0;
+            for (int I = 1; I <= n; I++)
+            {
+                result += I + plus;
+            }
+            return result;
+        }
+
         public static void CetakArray(string[,] array) 
         {
+            CetakArray(array, true);
+        }
+
+        public static void CetakArray(string[,] array, bool bTab) {
             for (int I = 0; I < array.GetLongLength(0); I++)
             {
                 for (int J = 0; J < array.GetLongLength(1); J++)
                 {
-                    Console.Write(array[I, J] + "\t");
+                    if (bTab)
+                    {
+                        Console.Write(array[I, J] + "\t");
+                    }
+                    else 
+                    {
+                        if (array[I, J] != null)
+                        {
+                            Console.Write(array[I, J]);
+                        }
+                        else
+                        {
+                            Console.Write(" ");
+                        }
+                        
+                    }
+                    
                 }
                 Console.WriteLine("\n");
             }

@@ -47,6 +47,13 @@
     <Compile Include="Soal01.cs" />
     <Compile Include="Soal02.cs" />
     <Compile Include="Soal03.cs" />
+    <Compile Include="Soal04.cs" />
+    <Compile Include="Soal05.cs" />
+    <Compile Include="Soal06.cs" />
+    <Compile Include="Soal07.cs" />
+    <Compile Include="Soal08.cs" />
+    <Compile Include="Soal09.cs" />
+    <Compile Include="Soal10.cs" />
     <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>
