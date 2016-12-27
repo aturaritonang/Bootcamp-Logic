@@ -29,6 +29,11 @@ namespace AppLatihanLogic06
             return result;
         }
 
+        public static int progPlus(int n)
+        {
+            return progPlus(n, 2);
+        }
+
         public static int progPlus(int n, int plus) {
             int result = 0;
             for (int I = 1; I <= n; I++)

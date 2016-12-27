@@ -10,9 +10,9 @@ namespace AppLatihanLogic06
     {
         public Soal05(int n)
         {
-            nilaiTinggi = n * n;
             nilaiLebar = n * n;
-            array2D = new string[nilaiTinggi, nilaiLebar];
+            nilaiPanjang = n * n;
+            array2D = new string[nilaiLebar, nilaiPanjang];
 
             IsiArray(n);
 
@@ -30,24 +30,32 @@ namespace AppLatihanLogic06
                 int posV = bangun * n;
                 int posH = (n - 1 - bangun) * n;
 
-                for (int I = 0; I < n; I++)
+                //tentukan ruang
+                int nLebar = (bangun + 1) * n;
+                int nPanjang = (n - bangun) * n;
+
+                //arah cetakan
+                bool kiri = true;
+
+                for (int I = posV; I < nLebar; I++)
                 {
-                    for (int J = 0; J < n; J++)
+                    if (kiri)
                     {
-                        int posRow = I + posV;
-                        int posCol = J;
-
-                        if (I % 2 == 0)
+                        for (int J = posH; J < nPanjang; J++)
                         {
-                            posCol = J + posH;
+                            array2D[I, J] = angkaGanjil.ToString();
+                            angkaGanjil += 2;
                         }
-                        else
+                        kiri = false;
+                    }
+                    else
+                    {
+                        for (int J = nPanjang - 1; J >= posH; J--)
                         {
-                            posCol = n - J - 1 + posH;
+                            array2D[I, J] = angkaGanjil.ToString();
+                            angkaGanjil += 2;
                         }
-
-                        array2D[posRow, posCol] = angkaGanjil.ToString();
-                        angkaGanjil += 2;
+                        kiri = true;
                     }
                 }
             }

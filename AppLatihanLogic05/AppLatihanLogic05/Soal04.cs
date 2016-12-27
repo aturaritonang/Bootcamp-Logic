@@ -10,9 +10,9 @@ namespace AppLatihanLogic05
     {
         public Soal04(int n)
         {
-            nilaiTinggi = Utility.Faktorial(n);
-            nilaiLebar = Utility.FaktorialSegiTiga(n);
-            array2D = new string[nilaiTinggi, nilaiLebar];
+            nilaiLebar = Utility.Faktorial(n);
+            nilaiPanjang = Utility.FaktorialSegiTiga(n);
+            array2D = new string[nilaiLebar, nilaiPanjang];
             IsiArray(n);
             CetakArray();
         }
@@ -33,11 +33,11 @@ namespace AppLatihanLogic05
                 int limL = nL - (bangun + 1);
                 int limR = nL - (bangun + 1);
 
-                for (int I = 0; I < nilaiTinggi; I++)
+                for (int I = 0; I < nilaiLebar; I++)
                 {
-                    for (int J = 0; J < nilaiLebar; J++)
+                    for (int J = 0; J < nilaiPanjang; J++)
                     {
-                        if (I >= posV && I < nT && nilaiLebar - 1 - J >= limL && nilaiLebar - 1 - J <= limR)
+                        if (I >= posV && I < nT && nilaiPanjang - 1 - J >= limL && nilaiPanjang - 1 - J <= limR)
                         {
                             array2D[I, J] = "*";
                         }

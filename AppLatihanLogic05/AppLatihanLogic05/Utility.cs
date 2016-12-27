@@ -35,7 +35,7 @@ namespace AppLatihanLogic05
         {
             int result = 0;
             for (int I = 1; I <= n; I++) {
-                result += (((I - 1)) * 2) + 1;
+                result += ((I - 1) * 2) + 1;
             }
             return result;
         }

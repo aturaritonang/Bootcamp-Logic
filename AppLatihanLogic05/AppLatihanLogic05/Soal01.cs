@@ -10,10 +10,10 @@ namespace AppLatihanLogic05
     {
         public Soal01(int n)
         {
-            nilaiTinggi = Utility.FaktorialSegiEmpat(n);
             nilaiLebar = Utility.FaktorialSegiEmpat(n);
+            nilaiPanjang = Utility.FaktorialSegiEmpat(n);
 
-            array2D = new string[nilaiTinggi, nilaiLebar];
+            array2D = new string[nilaiLebar, nilaiPanjang];
             IsiArray(n);
             CetakArray();
         }
@@ -34,9 +34,9 @@ namespace AppLatihanLogic05
             for (int bangun = 0; bangun < n; bangun++)
             {
                 int iPos = Utility.FaktorialSegiEmpat(bangun);
-                for (int I = 0; I < nilaiTinggi; I++)
+                for (int I = 0; I < nilaiLebar; I++)
                 {
-                    for (int J = 0; J < nilaiTinggi; J++)
+                    for (int J = 0; J < nilaiLebar; J++)
                     {
                         if (I >= iPos && J >= iPos && I <= iPos + bangun && J <= iPos + bangun)
                         {

@@ -12,8 +12,8 @@ namespace AppLatihanLogic07
         {
 
         }
-        public int nilaiTinggi { get; set; }
         public int nilaiLebar { get; set; }
+        public int nilaiPanjang { get; set; }
         public string[,] array2D { get; set; }
     }
 }

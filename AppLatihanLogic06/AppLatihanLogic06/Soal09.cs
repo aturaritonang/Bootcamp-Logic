@@ -10,25 +10,17 @@ namespace AppLatihanLogic06
     {
         public Soal09(int n)
         {
-            nilaiTinggi = n + 2;
-            nilaiLebar = Utility.progPlus(n, 2);
+            nilaiLebar = n + 2;
+            nilaiPanjang = Utility.progPlus(n, 2);
 
-            array2D = new string[nilaiTinggi, nilaiLebar];
+            array2D = new string[nilaiLebar, nilaiPanjang];
             IsiArray(n);
             Utility.CetakArray(array2D);
         }
 
         public void IsiArray(int n)
         {
-            //for (int I = 0; I < nilaiTinggi; I++)
-            //{
-            //    for (int J = 0; J < nilaiLebar; J++)
-            //    {
-            //        array2D[I, J] = J.ToString();
-            //    }
-            //}
-
-            int batasBawah = nilaiTinggi - 1;
+            int batasBawah = nilaiLebar - 1;
 
             //menentukan batas-batas
             int marginL = 0;
@@ -36,16 +28,17 @@ namespace AppLatihanLogic06
 
             for (int bangun = 1; bangun <= n; bangun++)
             {
+                //tentukan margin
                 marginR = marginL + bangun + 2;
-
-                int marginV = bangun + 2;
 
                 for (int I = 0; I <= bangun + 1; I++)
                 {
                     for (int J = 0; J <= bangun + 1; J++)
                     {
+                        //tentukan posisi koordinat
                         int posRow = batasBawah - I;
                         int posCol = marginL + J;
+
                         if (I == J || I == 0 || J == bangun + 1)
                         {
                             array2D[posRow, posCol] = (posCol + 1).ToString();

@@ -10,10 +10,10 @@ namespace AppLatihanLogic06
     {
         public Soal01(int n)
         {
-            nilaiTinggi = Utility.multipleSegitiga(n);
-            nilaiLebar = Utility.faktorSegitiga(n) * 2;
+            nilaiLebar = Utility.multipleSegitiga(n);
+            nilaiPanjang = Utility.faktorSegitiga(n) * 2;
 
-            array2D = new string[nilaiTinggi, nilaiLebar];
+            array2D = new string[nilaiLebar, nilaiPanjang];
 
             IsiArray(n);
             Utility.CetakArray(array2D);
@@ -22,25 +22,25 @@ namespace AppLatihanLogic06
         public void IsiArray(int n) 
         {
             //posisi kiri atau kanan, 0 kiri, 1 kanan
-            int leftRight = 0;
+            int kiri = 0;
 
             for (int bangun = 0; bangun < n; bangun++)
             {
                 //cari posisi untuk cetak
                 int posV = bangun * n;
-                int posH = Utility.faktorSegitiga(n * leftRight);
+                int posH = Utility.faktorSegitiga(n * kiri);
 
                 //cari ruang untuk cetak
-                int nT = (bangun + 1) * n;
-                int nL = (leftRight + 1) * ((n * 2) - 1);
+                int nLebar = (bangun + 1) * n;
+                int nPanjang = (kiri + 1) * ((n * 2) - 1);
 
                 //cari nilai tengah
-                int midL = nL - n;
-                int midR = nL - n;
+                int midL = nPanjang - n;
+                int midR = nPanjang - n;
 
-                for (int I = posV; I < nT; I++)
+                for (int I = posV; I < nLebar; I++)
                 {
-                    for (int J = posH; J < nL; J++)
+                    for (int J = posH; J < nPanjang; J++)
                     {
                         if (J >= midL && J <= midR) {
                             array2D[I, J] = "*";
@@ -49,7 +49,12 @@ namespace AppLatihanLogic06
                     midL -= 1;
                     midR += 1;
                 }
-                leftRight = leftRight == 0 ? 1 : 0;
+                //kiri = kiri == 0 ? 1 : 0;
+                if (kiri == 0)
+                    kiri = 1;
+                else
+                    kiri = 0;
+                
             }
         }
     }

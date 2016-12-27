@@ -10,10 +10,10 @@ namespace AppLatihanLogic06
     {
         public Soal08(int n)
         {
-            nilaiTinggi = n * n;
             nilaiLebar = n * n;
+            nilaiPanjang = n * n;
 
-            array2D = new string[nilaiTinggi, nilaiLebar];
+            array2D = new string[nilaiLebar, nilaiPanjang];
             IsiArray(n);
             Utility.CetakArray(array2D);
         }
@@ -51,14 +51,9 @@ namespace AppLatihanLogic06
                         {
                             array2D[posRow, posCol] = nilFinal.ToString();
                             if (J < midHor)
-                            {
                                 nilFinal -= 1;
-                            }
                             else 
-                            {
                                 nilFinal += 1;
-                            }
-                            
                         }
                     }
                     if (I < midVer)

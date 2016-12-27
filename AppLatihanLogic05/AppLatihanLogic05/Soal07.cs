@@ -10,10 +10,10 @@ namespace AppLatihanLogic05
     {
         public Soal07(int n)
         {
-            nilaiTinggi = Utility.FaktorialSegiEmpat(n);
             nilaiLebar = Utility.FaktorialSegiEmpat(n);
+            nilaiPanjang = Utility.FaktorialSegiEmpat(n);
 
-            array2D = new string[nilaiTinggi, nilaiLebar];
+            array2D = new string[nilaiLebar, nilaiPanjang];
 
             IsiArray(n);
             CetakArray();
@@ -34,11 +34,11 @@ namespace AppLatihanLogic05
                 //angka urut
                 int iUrut = 0;
 
-                for (int I = 0; I < nilaiTinggi; I++)
+                for (int I = 0; I < nilaiLebar; I++)
                 {
-                    for (int J = 0; J < nilaiLebar; J++)
+                    for (int J = 0; J < nilaiPanjang; J++)
                     {
-                        if (I >= posV && I < nT && nilaiLebar - 1 - J >= posH && nilaiLebar - 1 - J < nL)
+                        if (I >= posV && I < nT && nilaiPanjang - 1 - J >= posH && nilaiPanjang - 1 - J < nL)
                         {
                             iUrut++;
                             array2D[I, J] = iUrut.ToString();

@@ -10,10 +10,10 @@ namespace AppLatihanLogic06
     {
         public Soal06(int n)
         {
-            nilaiTinggi = n * n;
             nilaiLebar = n * n;
+            nilaiPanjang = n * n;
 
-            array2D = new string[nilaiTinggi, nilaiLebar];
+            array2D = new string[nilaiLebar, nilaiPanjang];
             IsiArray(n);
             Utility.CetakArray(array2D, true);
         }
@@ -22,33 +22,38 @@ namespace AppLatihanLogic06
         {
             for (int bangun = 0; bangun < n; bangun++)
             {
-                //cari posisi tengah
-                int midVer = (n - 1) / 2;
-                int midHor = (n - 1) / 2;
+                //tentukan posisi
+                int posV = bangun * n;
+                int posH = bangun * n;
 
-                //cari margin Left dan margin Right
-                int marL = midHor;
-                int marR = midHor;
+                //tentukan ruang
+                int nLebar = (bangun + 1) * n;
+                int nPanjang = (bangun + 1) * n;
 
-                for (int I = 0; I < n; I++)
+                //cari margin dan balik mantul
+                int midL = nPanjang - (n / 2) - 1;
+                int midR = nPanjang - (n / 2) - 1;
+                int mid = nPanjang - (n / 2) - 1;
+
+                for (int I = posV; I < nLebar; I++)
                 {
-                    for (int J = 0; J < n; J++)
+                    for (int J = posH; J < nPanjang; J++)
                     {
-                        //cari posisi kolom dan baris
-                        int posRow = I + (bangun * n);
-                        int posCol = J + (bangun * n);
-
-                        if (J >= marL && J <= marR )
+                        if (J >= midL && J <= midR)
                         {
-                            array2D[posRow, posCol] = "* ";
+                            array2D[I, J] = "*";
                         }
                     }
-                    if (I < midVer) {
-                        marL -= 1;
-                        marR += 1;
-                    } else {
-                        marL += 1;
-                        marR -= 1;
+
+                    if (I < mid)
+                    {
+                        midL--;
+                        midR++;
+                    }
+                    else
+                    {
+                        midL++;
+                        midR--;
                     }
                 }
             }

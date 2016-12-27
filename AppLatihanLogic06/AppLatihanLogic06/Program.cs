@@ -52,6 +52,24 @@ namespace AppLatihanLogic06
                         case 10:
                             Soal10 soal10 = new Soal10(n);
                             break;
+                        case 41:
+                            Soal041 soal041 = new Soal041(n);
+                            break;
+                        case 51:
+                            Soal051 soal051 = new Soal051(n);
+                            break;
+                        case 61:
+                            Soal061 soal061 = new Soal061(n);
+                            break;
+                        case 71:
+                            Soal071 soal071 = new Soal071(n);
+                            break;
+                        case 81:
+                            Soal081 soal081 = new Soal081(n);
+                            break;
+                        case 91:
+                            Soal091 soal091 = new Soal091(n);
+                            break;
                         default:
                             break;
                     }

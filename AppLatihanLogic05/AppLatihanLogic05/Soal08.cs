@@ -10,10 +10,10 @@ namespace AppLatihanLogic05
     {
         public Soal08(int n)
         {
-            nilaiTinggi = Utility.FaktorialSegiEmpat(n);
             nilaiLebar = Utility.FaktorialSegiEmpat(n);
+            nilaiPanjang = Utility.FaktorialSegiEmpat(n);
 
-            array2D = new string[nilaiTinggi, nilaiLebar];
+            array2D = new string[nilaiLebar, nilaiPanjang];
 
             IsiArray(n);
             Utility.CetakArray(array2D);
@@ -21,8 +21,8 @@ namespace AppLatihanLogic05
 
         public void IsiArray(int n)
         {
-            int nilBangunGenap = 1;
-            int nilBagunGanjil = 2;
+            int deretGanjil = 1;
+            int deretGenap = 2;
 
             for (int bangun = 0; bangun < n; bangun++)
             {
@@ -31,27 +31,27 @@ namespace AppLatihanLogic05
                 int posH = Utility.FaktorialSegiEmpat(bangun);
 
                 //cari ruang untuk cetak
-                int nT = Utility.FaktorialSegiEmpat(bangun + 1);
-                int nL = Utility.FaktorialSegiEmpat(bangun + 1);
+                int nLb = Utility.FaktorialSegiEmpat(bangun + 1);
+                int nPj = Utility.FaktorialSegiEmpat(bangun + 1);
 
-                //arah
+                //arah awal
                 bool kiri = true;
 
-                for (int I = posV; I < nT; I++)
+                for (int I = posV; I < nLb; I++)
                 {
                     if (kiri)
                     {
-                        for (int J = posH; J < nL; J++)
+                        for (int J = posH; J < nPj; J++)
                         {
                             if (bangun % 2 != 0)
                             {
-                                array2D[I, J] = nilBagunGanjil.ToString();
-                                nilBagunGanjil += 2;
+                                array2D[I, J] = deretGenap.ToString();
+                                deretGenap += 2;
                             }
                             else
                             {
-                                array2D[I, J] = nilBangunGenap.ToString();
-                                nilBangunGenap += 2;
+                                array2D[I, J] = deretGanjil.ToString();
+                                deretGanjil += 2;
                             }
 
                         }
@@ -59,17 +59,17 @@ namespace AppLatihanLogic05
                     }
                     else 
                     {
-                        for (int J = nL - 1; J >= posH; J--)
+                        for (int J = nPj - 1; J >= posH; J--)
                         {
                             if (bangun % 2 != 0)
                             {
-                                array2D[I, J] = nilBagunGanjil.ToString();
-                                nilBagunGanjil += 2;
+                                array2D[I, J] = deretGenap.ToString();
+                                deretGenap += 2;
                             }
                             else
                             {
-                                array2D[I, J] = nilBangunGenap.ToString();
-                                nilBangunGenap += 2;
+                                array2D[I, J] = deretGanjil.ToString();
+                                deretGanjil += 2;
                             }
 
                         }

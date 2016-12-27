@@ -10,33 +10,39 @@ namespace AppLatihanLogic05
     {
         public Soal09(int n)
         {
-            nilaiTinggi = Utility.FaktorialSegiEmpat(n);
-            nilaiLebar = (n * 2) - 1;
+            nilaiLebar = Utility.FaktorialSegiEmpat(n);
+            nilaiPanjang = (n * 2) - 1;
+            nilaiTengah = nilaiPanjang / 2;
 
-            array2D = new string[nilaiTinggi, nilaiLebar];
+            array2D = new string[nilaiLebar, nilaiPanjang];
             IsiArray(n);
             Utility.CetakArray(array2D);
         }
 
         public void IsiArray(int n) 
         {
-            for (int bangun = 1; bangun <= n; bangun++)
+            for (int bangun = 0; bangun < n; bangun++)
             {
-                int marginL = ((n * 2) - 1) / 2;
-                int marginR = ((n * 2) - 1) / 2;
+                //Tentukan nilai margin
+                int marginL = nilaiPanjang / 2;
+                int marginR = nilaiPanjang / 2;
 
                 //cari posisi untuk cetak
-                int posV = Utility.FaktorialSegiEmpat(bangun - 1);
+                int posV = Utility.FaktorialSegiEmpat(bangun);
+                int posH = (nilaiPanjang / 2) - bangun;
 
                 //cari ruang untuk cetak
-                int nT = Utility.FaktorialSegiEmpat(bangun);
-                int lebar = (bangun * 2) - 1;
+                int nT = Utility.FaktorialSegiEmpat(bangun + 1);
+                int nL = (nilaiPanjang / 2) + bangun + 1;
 
                 for (int I = posV; I < nT; I++)
                 {
-                    for (int J = marginL; J <= marginR; J++)
+                    for (int J = posH; J < nL; J++)
                     {
-                        array2D[I, J] = "*";
+                        if (J >= marginL && J <= marginR)
+                        {
+                            array2D[I, J] = "*";
+                        }
                     }
                     marginL -= 1;
                     marginR += 1;

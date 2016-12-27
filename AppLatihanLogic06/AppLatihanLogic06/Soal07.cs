@@ -10,15 +10,16 @@ namespace AppLatihanLogic06
     {
         public Soal07(int n)
         {
-            nilaiTinggi = n * n;
             nilaiLebar = n * n;
+            nilaiPanjang = n * n;
 
-            array2D = new string[nilaiTinggi, nilaiLebar];
+            array2D = new string[nilaiLebar, nilaiPanjang];
             IsiArray(n);
             Utility.CetakArray(array2D);
         }
 
-        public void IsiArray(int n) {
+        public void IsiArray(int n) 
+        {
             for (int bangun = 0; bangun < n; bangun++)
             {
                 //cari posisi tengah

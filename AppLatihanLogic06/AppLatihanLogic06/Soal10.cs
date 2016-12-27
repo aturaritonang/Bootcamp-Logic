@@ -10,9 +10,9 @@ namespace AppLatihanLogic06
     {
         public Soal10(int n)
         {
-            nilaiTinggi = n;
             nilaiLebar = n;
-            array2D = new string[nilaiTinggi, nilaiLebar];
+            nilaiPanjang = n;
+            array2D = new string[nilaiLebar, nilaiPanjang];
             IsiArray(n);
             Utility.CetakArray(array2D);
         }
@@ -24,7 +24,7 @@ namespace AppLatihanLogic06
                 {
                     if (I % 2 != 0)
                     {
-                        array2D[I, n - 1- J] = (I + 1).ToString();
+                        array2D[I, n - 1 - J] = (I + 1).ToString();
                     }
                     else
                     {

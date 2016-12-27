@@ -10,10 +10,10 @@ namespace AppLatihanLogic05
     {
         public Soal10(int n)
         {
-            nilaiTinggi = Utility.FaktorialSegiEmpat(n);
-            nilaiLebar = (n * 2) - 1;
+            nilaiLebar = Utility.FaktorialSegiEmpat(n);
+            nilaiPanjang = (n * 2) - 1;
 
-            array2D = new string[nilaiTinggi, nilaiLebar];
+            array2D = new string[nilaiLebar, nilaiPanjang];
             IsiArray(n);
             Utility.CetakArray(array2D);
         }

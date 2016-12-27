@@ -10,10 +10,10 @@ namespace AppLatihanLogic06
     {
         public Soal02(int n)
         {
-            nilaiTinggi = Utility.multipleSegitiga(n);
-            nilaiLebar = Utility.faktorSegitiga(n) * 2;
+            nilaiLebar = Utility.multipleSegitiga(n);
+            nilaiPanjang = Utility.faktorSegitiga(n) * 2;
 
-            array2D = new string[nilaiTinggi, nilaiLebar];
+            array2D = new string[nilaiLebar, nilaiPanjang];
 
             IsiArray(n);
             Utility.CetakArray(array2D);

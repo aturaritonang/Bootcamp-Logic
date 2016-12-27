@@ -41,8 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasicLogic.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Soal01.cs" />
+    <Compile Include="Soal011.cs" />
+    <Compile Include="Soal02.cs" />
+    <Compile Include="Soal021.cs" />
+    <Compile Include="Soal03.cs" />
+    <Compile Include="Soal031.cs" />
+    <Compile Include="Soal04.cs" />
+    <Compile Include="Soal05.cs" />
+    <Compile Include="Soal06.cs" />
+    <Compile Include="Soal061.cs" />
+    <Compile Include="Soal07.cs" />
+    <Compile Include="Soal08.cs" />
+    <Compile Include="Soal09.cs" />
+    <Compile Include="Soal091.cs" />
+    <Compile Include="Soal10.cs" />
+    <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
